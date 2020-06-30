@@ -1,4 +1,5 @@
 import React from "react";
+import FriendListComponent from "./FriendListComponent";
 
 export default (props) => {
   const { id, name, element, friends: raw_friends } = props.suspect;
@@ -12,20 +13,13 @@ export default (props) => {
     }
   });
 
-  const friendLists = friends.map((f) => {
-    return (
-      <div className="FriendComponent" key={f.id}>
-        <p>{f.id}</p>
-        <p>{f.name}</p>
-        <p>{f.element}</p>
-      </div>
-    );
-  });
-
   return (
     <div className="SuspectComponent">
+      <p>ID: {id}</p>
+      <p>Name: {name}</p>
       <p>Element: {element}</p>
-      {friendLists}
+      {/* {friendLists} */}
+      <FriendListComponent friends={friends} fetch={props.fetch} />
     </div>
   );
 };
