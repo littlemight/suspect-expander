@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import SuspectComponent from "./components/SuspectComponent";
 
 class App extends Component {
   state = {
@@ -15,20 +16,26 @@ class App extends Component {
       this.setState({
         response: json,
       });
-      console.log(json);
     } catch (e) {
       console.log(e);
     }
   };
 
   render() {
+    let suspectComponent = null;
+    if (this.state.response && this.state.response.status === 200) {
+      suspectComponent = (
+        <SuspectComponent
+          suspect={this.state.response.payload}
+          fetch={this.fetchID}
+        />
+      );
+    }
     return (
       <div className="App">
         <h1>Suspect Expander Speedrun</h1>
-        <input
-          type="number"
-          onChange={(e) => this.fetchID(e.target.value)}
-        ></input>
+        <input type="number" onChange={(e) => this.fetchID(e.target.value)} />
+        {suspectComponent}
       </div>
     );
   }
