@@ -12,6 +12,13 @@ export default (props) => {
       friends.push(f);
     }
   });
+  friends.sort((a, b) => {
+    a = parseInt(a.id);
+    b = parseInt(b.id);
+    if (a < b) return -1;
+    if (a > b) return 1;
+    return 0;
+  });
 
   return (
     <div className="SuspectComponent">

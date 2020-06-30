@@ -4,6 +4,7 @@ import SuspectComponent from "./components/SuspectComponent";
 
 class App extends Component {
   state = {
+    id: null,
     response: null,
   };
 
@@ -14,6 +15,7 @@ class App extends Component {
       });
       const json = await response.json();
       this.setState({
+        id: id,
         response: json,
       });
     } catch (e) {
@@ -34,7 +36,11 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Suspect Expander Speedrun</h1>
-        <input type="number" onChange={(e) => this.fetchID(e.target.value)} />
+        <input
+          type="number"
+          value={this.state.id || ""}
+          onChange={(e) => this.fetchID(e.target.value)}
+        />
         {suspectComponent}
       </div>
     );

@@ -1,5 +1,6 @@
 import React from "react";
 import { List, ListSubheader, Typography } from "@material-ui/core";
+import FriendItemComponent from "./FriendItemComponent";
 
 export default ({ friends, fetch }) => {
   return (
@@ -15,13 +16,14 @@ export default ({ friends, fetch }) => {
       }
     >
       {friends.map((f) => {
-        return (
-          <div className="FriendComponent" key={f.id}>
-            <p>{f.id}</p>
-            <p>{f.name}</p>
-            <p>{f.element}</p>
-          </div>
-        );
+        // return (
+        //   <div className="FriendComponent" key={f.id}>
+        //     <p>{f.id}</p>
+        //     <p>{f.name}</p>
+        //     <p>{f.element}</p>
+        //   </div>
+        // );
+        return <FriendItemComponent friend={f} key={f.id} fetch={fetch} />;
       })}
     </List>
   );
