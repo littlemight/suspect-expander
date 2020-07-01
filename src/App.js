@@ -29,7 +29,7 @@ class App extends Component {
       suspectComponent = (
         <SuspectComponent
           suspect={this.state.response.payload}
-          fetch={this.fetchID}
+          fetchID={this.fetchID}
         />
       );
     }

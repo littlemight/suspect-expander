@@ -2,7 +2,7 @@ import React from "react";
 import { List, ListSubheader, Typography } from "@material-ui/core";
 import FriendItemComponent from "./FriendItemComponent";
 
-export default ({ friends, fetch }) => {
+export default ({ friends, fetchID }) => {
   return (
     <List
       component="div"
@@ -16,14 +16,7 @@ export default ({ friends, fetch }) => {
       }
     >
       {friends.map((f) => {
-        // return (
-        //   <div className="FriendComponent" key={f.id}>
-        //     <p>{f.id}</p>
-        //     <p>{f.name}</p>
-        //     <p>{f.element}</p>
-        //   </div>
-        // );
-        return <FriendItemComponent friend={f} key={f.id} fetch={fetch} />;
+        return <FriendItemComponent friend={f} key={f.id} fetchID={fetchID} />;
       })}
     </List>
   );
