@@ -1,3 +1,9 @@
+# Suspect Expander
+
+This project was made as part of Bandung Institute of Technology's Programming Laboratory selection task.
+
+## template part
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
