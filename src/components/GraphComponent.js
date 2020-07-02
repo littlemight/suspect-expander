@@ -53,7 +53,7 @@ class GraphComponent extends Component {
   config = {
     automaticRearrangeAfterDropNode: true,
     directed: true,
-    width: 500,
+    width: 480,
   };
 
   expandGraphNode = async (id) => {
