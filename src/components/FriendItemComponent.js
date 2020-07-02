@@ -8,7 +8,7 @@ import {
 import ElementIcon from "./ElementIcon";
 
 export default ({ friend, fetchID }) => {
-  console.log(friend.element);
+  // console.log(friend.element);
   return (
     <React.Fragment>
       <ListItem button onClick={() => fetchID(friend.id)}>
