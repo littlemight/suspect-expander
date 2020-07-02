@@ -10,7 +10,10 @@ export default ({ friends, fetchID }) => {
       subheader={
         <ListSubheader component="div" id="nested-list-subheader">
           <Typography variant="subtitle1" align="left">
-            {friends.length > 1 ? "Friends" : "Friend"}
+            {friends.length} {friends.length > 1 ? "friends" : "friend"} found.
+          </Typography>
+          <Typography variant="subtitle2" align="left">
+            Click a friend to search them.
           </Typography>
         </ListSubheader>
       }

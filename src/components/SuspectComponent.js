@@ -1,7 +1,9 @@
 import React from "react";
 import FriendListComponent from "./FriendListComponent";
 import GraphComponent from "./GraphComponent";
-import { Container } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
+import { Card, CardHeader, CardContent } from "@material-ui/core";
+import ElementIcon from "./ElementIcon";
 
 export default (props) => {
   const { id, name, element, friends: raw_friends } = props.suspect;
@@ -25,14 +27,20 @@ export default (props) => {
 
   return (
     <Container className="SuspectComponent">
-      <GraphComponent
-        suspect={{ id, name, element }}
-        friends={friends}
-        fetchID={props.fetchID}
-      />
-      {/* <p>ID: {id}</p>
-      <p>Name: {name}</p>
-      <p>Element: {element}</p> */}
+      <Card>
+        <CardHeader
+          avatar={<ElementIcon element={element} />}
+          title={name}
+          subheader={`Suspect #${id}`}
+        />
+        <CardContent>
+          <GraphComponent
+            suspect={{ id, name, element }}
+            friends={friends}
+            fetchID={props.fetchID}
+          />
+        </CardContent>
+      </Card>
       <FriendListComponent friends={friends} fetchID={props.fetchID} />
     </Container>
   );

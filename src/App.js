@@ -43,10 +43,11 @@ class App extends Component {
             id="standard-basic"
             placeholder="69"
             label="Search your suspect"
+            type="number"
             value={this.state.id || ""}
             helperText={
               this.state.response && this.state.response.status === 200
-                ? `Showing result for Suspect #${this.state.id}`
+                ? `Showing result for Suspect #${this.state.id}. Click a node to search that node, double click to expand it.`
                 : ""
             }
             onChange={(e) => this.fetchID(e.target.value)}
