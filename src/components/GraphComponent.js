@@ -1,40 +1,26 @@
 import React, { Component } from "react";
 import { Graph } from "react-d3-graph";
+import { Container } from "@material-ui/core";
 
 class GraphComponent extends Component {
-  constructor(props) {
-    super(props);
-    const { suspect, friends } = props;
-    this.state = {
-      id: suspect.id,
-      data: {
-        nodes: [suspect, ...friends].map((p) => {
-          return {
-            id: p.id,
-            color: GraphComponent.getColor(p.element),
-          };
-        }),
-        links: friends.map((f) => {
-          return { source: suspect.id, target: f.id };
-        }),
-      },
-    };
-  }
+  state = {
+    id: null,
+  };
 
   static getColor(element) {
     let color = "red";
     switch (element) {
       case "air":
-        color = "cyan";
+        color = "#fad672";
         break;
       case "water":
-        color = "blue";
+        color = "#81d3e8";
         break;
       case "fire":
-        color = "red";
+        color = "#d46628";
         break;
       case "earth":
-        color = "green";
+        color = "#6e6d2d";
         break;
       default:
         break;
@@ -43,8 +29,8 @@ class GraphComponent extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    if (props.suspect.id !== state.id) {
-      const { suspect, friends } = props;
+    if (!props.suspect.id || props.suspect.id !== state.id) {
+      const { suspect, friends, fetchID } = props;
       return {
         id: suspect.id,
         data: {
@@ -58,6 +44,7 @@ class GraphComponent extends Component {
             return { source: suspect.id, target: f.id };
           }),
         },
+        fetchID: fetchID,
       };
     }
     return null;
@@ -65,6 +52,8 @@ class GraphComponent extends Component {
 
   config = {
     automaticRearrangeAfterDropNode: true,
+    directed: true,
+    width: 500,
   };
 
   expandGraphNode = async (id) => {
@@ -109,7 +98,7 @@ class GraphComponent extends Component {
       <Graph
         id="graph-id"
         data={this.state.data}
-        onClickNode={this.props.fetchID}
+        onClickNode={this.state.fetchID}
         onDoubleClickNode={this.expandGraphNode}
         config={this.config}
       />

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Container, Box, TextField } from "@material-ui/core";
 import "./App.css";
 import SuspectComponent from "./components/SuspectComponent";
 
@@ -33,16 +34,27 @@ class App extends Component {
         />
       );
     }
+
     return (
-      <div className="App">
-        <h1>Suspect Expander Speedrun</h1>
-        <input
-          type="number"
-          value={this.state.id || ""}
-          onChange={(e) => this.fetchID(e.target.value)}
-        />
-        {suspectComponent}
-      </div>
+      <Container maxWidth="sm">
+        <Box my={4}>
+          <h1>Suspect Expander Speedrun</h1>
+          <TextField
+            id="standard-basic"
+            placeholder="69"
+            label="Search your suspect"
+            value={this.state.id || ""}
+            helperText={
+              this.state.response && this.state.response.status === 200
+                ? `Showing result for Suspect #${this.state.id}`
+                : ""
+            }
+            onChange={(e) => this.fetchID(e.target.value)}
+            fullWidth
+          />
+          {suspectComponent}
+        </Box>
+      </Container>
     );
   }
 }

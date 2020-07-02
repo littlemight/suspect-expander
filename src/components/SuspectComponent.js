@@ -1,6 +1,7 @@
 import React from "react";
 import FriendListComponent from "./FriendListComponent";
 import GraphComponent from "./GraphComponent";
+import { Container } from "@material-ui/core";
 
 export default (props) => {
   const { id, name, element, friends: raw_friends } = props.suspect;
@@ -23,16 +24,16 @@ export default (props) => {
   });
 
   return (
-    <div className="SuspectComponent">
+    <Container className="SuspectComponent">
       <GraphComponent
         suspect={{ id, name, element }}
         friends={friends}
         fetchID={props.fetchID}
       />
-      <p>ID: {id}</p>
+      {/* <p>ID: {id}</p>
       <p>Name: {name}</p>
-      <p>Element: {element}</p>
+      <p>Element: {element}</p> */}
       <FriendListComponent friends={friends} fetchID={props.fetchID} />
-    </div>
+    </Container>
   );
 };
