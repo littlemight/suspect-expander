@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Box,
-  TextField,
-  Typography,
-  SvgIcon,
-} from "@material-ui/core";
+import { Container, Box, TextField, Typography } from "@material-ui/core";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { animateScroll as scroll } from "react-scroll";
 import "./App.css";

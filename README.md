@@ -1,76 +1,55 @@
 # Suspect Expander
 
-This project was made as part of Bandung Institute of Technology's Programming Laboratory selection task.
+This project was made as part of Bandung Institute of Technology's Programming Laboratory selection task. This webapp uses an API to fetch the query and render the result to the user.
+
+## Usage
+
+Input the suspect's ID to the search bar, you can click a node to explore that node (suspect), or double click to add friends from that suspect to the graph. You can also click the a friend in the friend list to investigate that person.
+Each suspect's element is represented by a logo.
+
+## API Review
+
+Fetching of the suspect datas is using [labpro's API](https://avatar.labpro.dev). The endpoint of the API is GET /friends/{id}
+. There are some flaws with the API
+
+- The suspect can be included in the friend list from the response
+- Duplicate friends in the friend list of a suspect
+
+I'm not sure if this is intended to be a flaw, but is worth mentioning:
+
+- One sided friendship (if a is friend with b, b may or may not be friends with a)
+
+Some recommendation for the API is to filter the generated data first, so that we don't need to filter the nodes and edges when constructing the graph.
+
+## Installation and Setup Instructions
+
+To run this project on your local machine, clone this repository. You will need <code>node</code> and <code>npm</code> installed on your machine.
+
+### Installation
+
+`npm install`
+
+### Starting Local Server
+
+`npm start`
+
+This will start the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Deployment
+
+`npm run deploy`
+
+This project is deployed on [Github Pages](https://pages.github.com/) at https://littlemight.github.io/suspect-expander/
+
+## Built With
+
+## Kudos
 
 Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
-## template part
+The element icons are from [fontawesome](https://fontawesome.com/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [Fire Element](https://fontawesome.com/icons/fire?style=solid)
+- [Water Element](https://fontawesome.com/icons/tint?style=solid)
+- [Air Element](https://fontawesome.com/icons/wind?style=solid)
+- [Earth Element](https://fontawesome.com/icons/mountain?style=solid)

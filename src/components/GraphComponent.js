@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Graph } from "react-d3-graph";
-import { Container } from "@material-ui/core";
 
 class GraphComponent extends Component {
   state = {

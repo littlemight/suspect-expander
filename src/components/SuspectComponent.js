@@ -1,7 +1,7 @@
 import React from "react";
 import FriendListComponent from "./FriendListComponent";
 import GraphComponent from "./GraphComponent";
-import { Box, Container, Typography } from "@material-ui/core";
+import { Box, Container } from "@material-ui/core";
 import { Card, CardHeader, CardContent } from "@material-ui/core";
 import ElementIcon from "./ElementIcon";
 
