@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Box, TextField, Typography } from "@material-ui/core";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { animateScroll as scroll } from "react-scroll";
 import "./App.css";
 import SuspectComponent from "./components/SuspectComponent";
 
@@ -26,6 +27,7 @@ class App extends Component {
         id: id,
         response: json,
       });
+      scroll.scrollToTop();
     } catch (e) {
       console.log(e);
     }
@@ -67,10 +69,10 @@ class App extends Component {
               }
               helperText={
                 this.state.response && this.state.response.status === 200
-                  ? `Showing result for Suspect #${this.state.id}. Click a node to search that node, double click to expand it.`
+                  ? `Showing result for Suspect #${this.state.id}. Click a node to search that suspect, double click to expand it.`
                   : this.state.response && this.state.id
                   ? `API Message: ${this.state.response.message}`
-                  : ""
+                  : "Got anyone you suspect? Search 'em here. (Psst... IDs only.)"
               }
               onChange={(e) => this.fetchID(e.target.value)}
               fullWidth
