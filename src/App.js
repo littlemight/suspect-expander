@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { Container, Box, TextField, Typography } from "@material-ui/core";
+import {
+  Container,
+  Box,
+  TextField,
+  Typography,
+  SvgIcon,
+} from "@material-ui/core";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { animateScroll as scroll } from "react-scroll";
 import "./App.css";
@@ -72,7 +78,7 @@ class App extends Component {
                   ? `Showing result for Suspect #${this.state.id}. Click a node to search that suspect, double click to expand it.`
                   : this.state.response && this.state.id
                   ? `API Message: ${this.state.response.message}`
-                  : "Got anyone you suspect? Search 'em here. (Psst... IDs only.)"
+                  : "Got anyone you suspect? Search 'em here. (IDs only, sadly.)"
               }
               onChange={(e) => this.fetchID(e.target.value)}
               fullWidth
