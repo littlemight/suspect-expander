@@ -4,12 +4,14 @@ This project was made as part of Bandung Institute of Technology's Programming L
 
 ## Usage
 
-Input the suspect's ID to the search bar, you can click a node to explore that node (suspect), or double click to add friends from that suspect to the graph. You can also click the a friend in the friend list to investigate that person.
+![demo]("demo/demo.gif")
+
+Input the suspect's ID to the search bar, you can click a node to explore that node (suspect), or double click to add friends from that suspect to the graph. You can zoom in/out on the graph view with the scroll wheel. You can also click a friend in the friend list to investigate that person.
 Each suspect's element is represented by a logo.
 
 ## API Review
 
-Fetching of the suspect datas is using [labpro's API](https://avatar.labpro.dev). The endpoint of the API is GET /friends/{id}
+Fetching of the suspect datas is using [labpro's API](https://avatar.labpro.dev). The endpoint of the API is GET `/friends/{id}`
 . There are some flaws with the API
 
 - The suspect can be included in the friend list from the response
@@ -23,7 +25,7 @@ Some recommendation for the API is to filter the generated data first, so that w
 
 ## Installation and Setup Instructions
 
-To run this project on your local machine, clone this repository. You will need <code>node</code> and <code>npm</code> installed on your machine.
+To run this project on your local machine, clone this repository. You will need `node` and `npm` installed on your machine.
 
 ### Installation
 
@@ -43,6 +45,10 @@ This project is deployed on [Github Pages](https://pages.github.com/) at https:/
 
 ## Built With
 
+- [React](https://reactjs.org/) - Javascript library for front end development
+- [Material-UI](https://material-ui.com/) - Frontend framework for React applications
+- [react-d3-graph](https://github.com/danielcaldas/react-d3-graph) - React component to visualize graphs with [d3](https://react-d3-library.github.io/)
+
 ## Kudos
 
 Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
@@ -53,3 +59,7 @@ The element icons are from [fontawesome](https://fontawesome.com/)
 - [Water Element](https://fontawesome.com/icons/tint?style=solid)
 - [Air Element](https://fontawesome.com/icons/wind?style=solid)
 - [Earth Element](https://fontawesome.com/icons/mountain?style=solid)
+
+## Author
+
+- **Michel Fang** - _13518137_ - Teknik Informatika ITB 2018
