@@ -4,7 +4,7 @@ This project was made as part of Bandung Institute of Technology's Programming L
 
 ## Usage
 
-![demo]("demo/demo.gif")
+![demo](demo/demo.gif)
 
 Input the suspect's ID to the search bar, you can click a node to explore that node (suspect), or double click to add friends from that suspect to the graph. You can zoom in/out on the graph view with the scroll wheel. You can also click a friend in the friend list to investigate that person.
 Each suspect's element is represented by a logo.
